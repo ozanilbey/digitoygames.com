@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Digitoy Games",
   "scripts": {
-    "start": "[[ $NODE_ENV == 'production' ]] && npm run start:production || npm run start:development",
-    "start:production": "npm run build && node server.bundle.js",
-    "start:development": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client",
+    "start": "[[ $NODE_ENV == 'production' ]] && npm run production || npm run development",
+    "production": "npm run build && node server.bundle.js",
+    "development": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client",
     "build": "npm run build:client && npm run build:server",
     "build:server": "NODE_ENV=production webpack --env.base=server",
     "build:client": "NODE_ENV=production webpack --env.base=client"
