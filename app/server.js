@@ -38,7 +38,7 @@ app.use((request, response) => {
     }
 });
 
-console.log(process.env.PORT);
+console.log(process);
 
 const server = app.listen(process.env.PORT || 3000, function () {
     let port = server.address().port;
