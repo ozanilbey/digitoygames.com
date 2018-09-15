@@ -9,7 +9,6 @@ import App from './App.jsx';
 const index = fs.readFileSync('index.html', 'utf8');
 
 const app = new express();
-const server = new http.Server(app);
 
 app.get('*.js', function (request, response, next) {
     request.url = request.url + '.gz';
@@ -39,6 +38,14 @@ app.use((request, response) => {
     }
 });
 
+const server = app.listen(process.env.PORT || 3000, function () {
+    let port = server.address().port;
+    console.log("Express is working on port " + port);
+});
+
+/*
 const PORT = process.env.PORT || 3000;
+const server = new http.Server(app);
 server.listen(PORT, '0.0.0.0');
 console.log(`\nApplication available at ${PORT}\n`);
+*/
