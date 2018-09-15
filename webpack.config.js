@@ -62,7 +62,7 @@ module.exports = ({ base }) => {
         plugins: isClient ? [
             new webpack.DefinePlugin({
                 ONSERVER: false,
-                'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+                'process.env.NODE_ENV': JSON.stringify(nodeEnv)
             }),
             new HtmlWebpackPlugin({
                 template: 'app/template.html',
@@ -95,7 +95,7 @@ module.exports = ({ base }) => {
         ] : [
             new webpack.DefinePlugin({
                 ONSERVER: true,
-                'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+                'process.env.NODE_ENV': JSON.stringify(nodeEnv)
             }),
             extractLess
         ]
