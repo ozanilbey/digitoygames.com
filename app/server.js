@@ -7,7 +7,7 @@ import fs from 'fs';
 import App from './App.jsx';
 
 const index = fs.readFileSync('index.html', 'utf8');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 
 const app = new express();
 const server = new http.Server(app);
