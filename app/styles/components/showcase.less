@@ -1,0 +1,92 @@
+.showcase {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 21em;
+    .container {
+        display: table;
+        padding: 5em 0;
+        .clearfix;
+        &:nth-child(odd) {
+            & > *:first-child {
+                float: left;
+            }
+            & > *:last-child {
+                .content {
+                    padding-left: 10%;
+                }
+            }
+        }
+        &:nth-child(even) {
+            & > *:first-child {
+                float: right;
+            }
+            & > *:last-child {
+                .content {
+                    padding-right: 10%;
+                }
+            }
+        }
+        & + .container {
+            //border-top: 2px solid fade(white, 15%);
+        }
+        .visual {
+            width: 24em;
+        }
+        .text {
+            display: table;
+            width: calc(100% - 24em);
+            min-height: 21em;
+            text-align: left;
+            .content {
+                display: table-cell;
+                width: 90%;
+                vertical-align: middle;
+                h2 {
+                    margin: 0;
+                    font-size: 3.5em;
+                    line-height: 1.1em;
+                    text-align: unset;
+                    color: @text-color-strong;
+                }
+                p {
+                    margin: 0;
+                    margin-top: 1em;
+                    font-size: 1.3em;
+                    line-height: 1.5em;
+                }
+                button {
+                    margin: 0;
+                    margin-top: 1.5em;
+                    .border-radius(@border-radius-medium);
+                }
+            }
+        }
+    }
+}
+// Responsive
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* 1024 ≤ Window Width < 1152 */
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+
+}
+
+/* 1152 ≤ Window Width < 1280 */
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+
+}

@@ -1,0 +1,80 @@
+.hero {
+    display: block;
+    position: relative;
+    top: -4em;
+    padding-top: 4em;
+    background-color: @primary-color;
+    border-bottom: 2px solid fade(@secondary-color, 10%);
+    box-shadow: 0 0 0.75em 0 fade(black, 25%);
+    .container {
+        padding: 5em 0;
+        .clearfix;
+        & > h1 {
+            font-style: normal;
+            float: left;
+            width: calc(50% - .5em);
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-size: 5em;
+            line-height: .8em;
+            text-shadow: 0 1px 0 darken(white, 20%), 0 2px 0 darken(white, 25%), 0 .1em .1em rgba(0, 0, 0, .075);
+            &:last-child {
+                width: 100%;
+                margin-top: .35em;
+            }
+            &.plus {
+                width: 1em;
+                color: @secondary-color;
+                text-shadow: 0 1px 0 darken(@secondary-color, 40%), 0 2px 0 darken(@secondary-color, 50%), 0 .1em .1em rgba(0, 0, 0, .075);
+            }
+            &.ltr {
+                text-align: left;
+                span {
+                    &:last-child {
+                        color: @secondary-color;
+                        opacity: .5;
+                        text-shadow: none;
+                    }
+                }
+            }
+            &.rtl {
+                text-align: right;
+                span {
+                    &:first-child {
+                        color: @secondary-color;
+                        opacity: .5;
+                        text-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* 1024 ≤ Window Width < 1152 */
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+
+}
+
+/* 1152 ≤ Window Width < 1280 */
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+
+}
