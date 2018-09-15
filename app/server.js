@@ -38,7 +38,9 @@ app.use((request, response) => {
     }
 });
 
-console.log(process);
+console.log('env:', process.env);
+console.log('portExists:', process.env.PORT ? true : false);
+console.log('port:', process.env.PORT, process.env['PORT']);
 
 const server = app.listen(process.env.PORT || 3000, function () {
     let port = server.address().port;
