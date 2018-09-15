@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Digitoy Games",
   "scripts": {
-    "start": "export NODE_ENV=production && npm run production",
-    "production": "npm run build && node server.bundle.js",
+    "preinstall": "export NODE_ENV=production && npm run build",
+    "start": "npm run production",
+    "production": "node server.bundle.js",
     "development": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client",
     "build": "npm run client && npm run server",
     "server": "NODE_ENV=production webpack --env.base=server",
