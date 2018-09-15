@@ -7,7 +7,6 @@ import fs from 'fs';
 import App from './App.jsx';
 
 const index = fs.readFileSync('index.html', 'utf8');
-const PORT = process.env.PORT || 80;
 
 const app = new express();
 const server = new http.Server(app);
@@ -40,5 +39,6 @@ app.use((request, response) => {
     }
 });
 
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, '0.0.0.0');
 console.log(`\nApplication available at ${PORT}\n`);
