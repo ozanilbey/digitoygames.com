@@ -38,6 +38,8 @@ app.use((request, response) => {
     }
 });
 
+console.log(process.env.PORT);
+
 const server = app.listen(process.env.PORT || 3000, function () {
     let port = server.address().port;
     console.log("Express is working on port " + port);
