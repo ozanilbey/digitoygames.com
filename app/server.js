@@ -9,6 +9,8 @@ import App from './App.jsx';
 const index = fs.readFileSync('index.html', 'utf8');
 
 const app = new express();
+const server = new http.Server(app);
+const port = process.env.PORT || 3000;
 
 app.get('*.js', function (request, response, next) {
     request.url = request.url + '.gz';
@@ -38,18 +40,9 @@ app.use((request, response) => {
     }
 });
 
-console.log('env:', process.env);
-console.log('portExists:', process.env.PORT ? true : false);
-console.log('port:', process.env.PORT, process.env['PORT']);
-
-const server = app.listen(process.env.PORT || 3000, function () {
-    let port = server.address().port;
-    console.log("Express is working on port " + port);
+server.listen(port, '0.0.0.0', function() {
+    console.log(`\nApplication available at ${port}\n`);
+    setInterval(function() {
+        http.get("https://digitoygames-com.herokuapp.com");
+    }, 1500000); // every 25 minutes
 });
-
-/*
-const PORT = process.env.PORT || 3000;
-const server = new http.Server(app);
-server.listen(PORT, '0.0.0.0');
-console.log(`\nApplication available at ${PORT}\n`);
-*/
