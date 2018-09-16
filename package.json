@@ -6,7 +6,8 @@
         "build": "npm run build:client && npm run build:server",
         "build:client": "NODE_ENV=production webpack --env.base=client",
         "build:server": "NODE_ENV=production webpack --env.base=server",
-        "start": "npm run start:production",
+        "postinstall": "npm run build",
+        "start": "node server.bundle.js",
         "start:production": "npm run build && node server.bundle.js",
         "start:development": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client"
     },
@@ -37,7 +38,6 @@
         "less": "^3.0.4",
         "less-loader": "^4.1.0",
         "react": "^15.6.2",
-        "react-color": "^2.14.1",
         "react-dom": "^15.6.2",
         "react-markdown": "^3.3.4",
         "react-router": "^4.0.0",

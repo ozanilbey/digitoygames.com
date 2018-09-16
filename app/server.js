@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router';
-import http from 'http'; //import https from 'https';
+import http from 'http';
 import express from 'express';
 import fs from 'fs';
+
 import App from './App.jsx';
 
 const index = fs.readFileSync('index.html', 'utf8');
